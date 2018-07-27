@@ -13,16 +13,16 @@
       <div id="container">
         <div id="content" role="main">
           <header>
-            <img src="logo.png" alt="epam_logo" />
+            <img src="logo.png" alt="EPAM Logo" />
             <h1><strong>HTML Elements</strong></h1>
           </header>
           <hr>
           <nav>
               <a href="#"><strong>Home</strong></a>
               <a href="#headers"><strong>Headers</strong></a>
-              <a href="#"><strong>Table</strong></a>
-              <a href="#"><strong>List</strong></a>
-              <a href="#"><strong>Text formats</strong></a>
+              <a href="#table"><strong>Table</strong></a>
+              <a href="#list"><strong>List</strong></a>
+              <a href="#textFormats"><strong>Text formats</strong></a>
               <a href="#"><strong>Blockquotes</strong></a>
           </nav>
           <hr>
@@ -63,6 +63,52 @@
               </tbody>
             </table>
           </section>
+          <section id="list">
+            <h2>Unordered List</h2>
+            <ul>
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <ul>
+                <li>Some nested list item 1</li>
+              </ul>
+              <li>List item 3</li>
+            </ul>
+            <h2>Ordered List</h2>
+            <ol>
+              <li>List item 1</li>
+              <li>List item 2</li>
+              <ol type="A">
+                <li>Some nested list item 1</li>
+              </ol>
+              <li>List item 3</li>
+            </ol>
+            <h3>Definition List</h3>
+            <dl>
+              <dt>defines terms 1</dt>
+              <dd>description 1</dd>
+            </dl>
+            <dl>
+              <dt>defines terms 2</dt>
+              <dd>description 2</dd>
+            </dl>
+            <h2>Details</h2>
+            <details open>
+              <summary>Some details element (open)</summary>
+              <p>Here are more details about the details.</p>
+            </details>
+            <details>
+              <summary>Some details element (close)</summary>
+              <p>Here are more details about the details.</p>
+            </details>
+          </section>
+          <article>
+            <h2>Text formats</h2>
+            <p><b>Article Text</b></p>
+            <article>
+              <h2>Article title</h2>
+              <p>Article description</p>
+            </article>
+          </article>
         </div>
       </div>
     </div>
