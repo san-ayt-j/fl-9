@@ -1,34 +1,150 @@
 @media print {
+    
     .tm-main-content {
         margin-left: 0px;
         padding-left: 30px
     }
+    
     .tm-banner {
         max-height: 200px;
     }
+    
     .tm-banner-inner img {
         padding-top: 10px;
     }
+    
     .flex-2-col {
         display: block;
     }
+    
     .tm-team-description-container {
         max-width: 100%;
     }
+    
     .flex-item img {
         display: block;
         margin-left: auto;
         margin-right: auto;
     }
+    
     .tm-team-description-container .tm-section-title {
         color: blue;
     }
+    
     .flex-item {
-        padding-top:0px;
+        padding-top: 0px;
         padding-bottom: 0px;
     }
-    .tm-main-nav, #about.tm-content-box, .heading.tm-content-box, .blocks, #ideas, #ideas+.tm-content-box{
+    
+    .tm-main-nav, #about.tm-content-box, .heading.tm-content-box, .blocks, #ideas, #ideas + .tm-content-box{
         display: none;
     }
+}
+
+@media screen {
+    
+    #about img{
+        border-radius: 50%;
+    }
+    
+    .box-bg:hover {
+        background-color: #34afd1;
+    }
+    
+    .box-bg:hover h2{
+        color: white;
+    }
+    
+    p::first-letter {
+        color: #76cdd7;
+        font-size: 30px;
+    }
+    
+    .tm-sidebar, .tm-content-box {
+        box-shadow: 0 0 1em grey;
+    }
+   
+    section::before {
+        content: "";
+        width: 0;
+    	height: 0;
+    	border-left: 0px solid transparent;
+    	border-right: 150px solid transparent;
+    	border-top: 25px solid #34afd1;
+    }
+    
+    /*
+    Change color of ‘How We Do It’ to gainsboro and add letter spacing 5px*/
+    
+    /*.carousel-item .active {
+        color: green;
+        letter-spacing: 5px;
+        background-color: red;
+    }*/
+     
+    h2 + p {
+        font-style: italic;
+    }
+    
+    p {
+        text-indent: 8%;
+        line-height: 200%;
+    }
+    
+    #home p{
+        text-indent: inherit;
+        line-height: normal;
+    }
+    
+    .heading a:visited {
+        color: silver;
+    }
+    
+    .heading a:hover {
+        color: #76cdd7;
+        text-decoration: underline double;
+    }
+    
+    .text::after {
+        content: "New";
+        color: red;
+        vertical-align: super;
+    }
+    
+    .blocks p {
+        text-indent: inherit;
+    }
+    
+    .blocks p:first-letter {
+        color:black;
+    }
+    
+    .blocks li:nth-child(1), .blocks li:nth-child(3), .blocks li:nth-child(5) {
+        background-color: lightgrey;
+    }
+    
+    .tm-nav-item {
+        border-bottom: 1px dotted silver;
+    }
+    
+    .tm-nav-item:last-child{
+        border-bottom: none;
+    }
+    
+    .contact-form input:focus, .contact-form textarea:focus, .contact-form button {
+        color: red;
+    }
+    
+    .contact-form button:hover {
+        background-color: #34afd1;
+        color:white;
+    }
+    
+    /*.contact-form input[type=email]::after{
+        content: "*";
+        color:red;
+        font-weight: bold;
+    }*/
+
 }
 
