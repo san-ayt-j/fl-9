@@ -1,7 +1,4 @@
 @media print {
-    .tm-main-nav {
-        display: none;
-    }
     .tm-main-content {
         margin-left: 0px;
         padding-left: 30px
@@ -24,14 +21,14 @@
         margin-right: auto;
     }
     .tm-team-description-container .tm-section-title {
-        color: blue !important;
+        color: blue;
     }
     .flex-item {
         padding-top:0px;
         padding-bottom: 0px;
     }
-    #about.tm-content-box, .heading.tm-content-box, .blocks, #ideas, #ideas+.tm-content-box{
-        display: none !important;
+    .tm-main-nav, #about.tm-content-box, .heading.tm-content-box, .blocks, #ideas, #ideas+.tm-content-box{
+        display: none;
     }
 }
 
