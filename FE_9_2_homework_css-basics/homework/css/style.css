@@ -13,7 +13,7 @@
         padding-top: 10px;
     }
     
-    .flex-2-col {
+    .flex-2-col, .flex-item img {
         display: block;
     }
     
@@ -22,7 +22,6 @@
     }
     
     .flex-item img {
-        display: block;
         margin-left: auto;
         margin-right: auto;
     }
@@ -73,14 +72,10 @@
     	border-top: 25px solid #34afd1;
     }
     
-    /*
-    Change color of ‘How We Do It’ to gainsboro and add letter spacing 5px*/
-    
-    /*.carousel-item .active {
-        color: green;
+    .carousel-item h2{
+        color: gainsboro;
         letter-spacing: 5px;
-        background-color: red;
-    }*/
+    }
      
     h2 + p {
         font-style: italic;
@@ -91,8 +86,11 @@
         line-height: 200%;
     }
     
-    #home p{
+    #home p, .blocks p{
         text-indent: inherit;
+    }
+    
+    #home p {
         line-height: normal;
     }
     
@@ -109,10 +107,7 @@
         content: "New";
         color: red;
         vertical-align: super;
-    }
-    
-    .blocks p {
-        text-indent: inherit;
+        font-size: 8pt;
     }
     
     .blocks p:first-letter {
@@ -120,7 +115,7 @@
     }
     
     .blocks li:nth-child(1), .blocks li:nth-child(3), .blocks li:nth-child(5) {
-        background-color: lightgrey;
+        background-color: gainsboro;
     }
     
     .tm-nav-item {
@@ -140,11 +135,12 @@
         color:white;
     }
     
-    /*.contact-form input[type=email]::after{
+    .mandatory-field::after{
         content: "*";
         color:red;
         font-weight: bold;
-    }*/
+        display: inline;
+    }
 
 }
 
