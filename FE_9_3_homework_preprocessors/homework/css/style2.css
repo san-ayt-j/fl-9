@@ -1,6 +1,8 @@
 .main-wrapper {
   width: 960px;
   margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
   background-color: #ededed;
   font-family: Garamond, Georgia, sans-serif;
   color: #737373;
@@ -14,30 +16,36 @@
   text-transform: uppercase;
 }
 .main-wrapper header {
-  display: inline;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
   margin-left: 2%;
   margin-right: 2%;
+  max-Width: 100%;
+  height: 100%;
 }
 .main-wrapper header .logo {
-  display: inline;
+  flex: 40%;
 }
 .main-wrapper header .logo img {
-  max-width: 40%;
+  max-width: 100%;
 }
 .main-wrapper header nav {
-  display: inline;
+  flex: 60%;
   max-width: 60%;
   height: 30%;
   color: #fa5732;
   font-size: 1em;
   text-transform: uppercase;
-  border-top: 1px solid #627d8a;
-  border-bottom: 1px solid #627d8a;
+  border-top: 1px solid #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
   padding-top: 2%;
   padding-bottom: 2%;
+  margin-top: auto;
+  margin-bottom: 3%;
 }
 .main-wrapper header nav a {
-  margin: 6%;
+  margin: 11%;
 }
 .main-wrapper header nav a:link {
   color: #fa5732;
@@ -52,8 +60,17 @@
   text-decoration: none;
 }
 .main-wrapper .toolbar {
-  display: block;
+  display: flex;
+  flex-direction: row-reverse;
   margin: 2%;
+}
+.main-wrapper .toolbar input {
+  border: 1px solid #fa5732;
+  padding: 1%;
+  background: none;
+}
+.main-wrapper .toolbar input::placeholder {
+  color: #fa5732;
 }
 .main-wrapper .post-list {
   display: flex;
@@ -61,6 +78,7 @@
 }
 .main-wrapper .post-list article {
   flex: 40%;
+  height: 100%;
   background-color: #fff;
   margin-left: 2%;
   margin-right: 2%;
@@ -70,32 +88,65 @@
 .main-wrapper .post-list article img {
   max-width: 100%;
 }
+.main-wrapper .post-list article .post-description {
+  color: #bfbfbf;
+  border-bottom: 1px solid #bfbfbf;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  font-size: 0.8em;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+.main-wrapper .post-list article h3 {
+  margin: 1%;
+}
+.main-wrapper .post-list article p {
+  margin-top: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
 .main-wrapper .about {
   margin-left: 2%;
   margin-right: 2%;
+}
+.main-wrapper .about h1 {
+  display: flex;
+  flex-direction: row-reverse;
 }
 .main-wrapper .about img {
   max-width: 100%;
 }
 .main-wrapper .contact-form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   margin-left: 2%;
   margin-right: 2%;
 }
-.main-wrapper .contact-form h4 {
-  float: right;
-}
 .main-wrapper .contact-form h1 {
-  float: right;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 0;
+  margin-top: 5%;
+}
+.main-wrapper .contact-form h4 {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-top: 0;
 }
 .main-wrapper .contact-form .form-control {
+  display: table;
   width: 100%;
-  border: 1px solid #627d8a;
+  border: 1px solid #bfbfbf;
   margin-top: 1%;
   margin-bottom: 1%;
+  background: none;
   padding: 1%;
   font-size: 1em;
 }
 .main-wrapper .contact-form .submit-btn {
+  display: table;
+  float: right;
   background-color: #fa5732;
   border: 0px;
   color: #fff;
