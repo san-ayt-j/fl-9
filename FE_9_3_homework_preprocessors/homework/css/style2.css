@@ -1,0 +1,113 @@
+.main-wrapper {
+  width: 960px;
+  margin: 0 auto;
+  background-color: #ededed;
+  font-family: Garamond, Georgia, sans-serif;
+  color: #737373;
+}
+.main-wrapper h1, .main-wrapper h4 {
+  color: #fa5732;
+  text-transform: uppercase;
+}
+.main-wrapper h3 {
+  color: #627d8a;
+  text-transform: uppercase;
+}
+.main-wrapper header {
+  display: inline;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.main-wrapper header .logo {
+  display: inline;
+}
+.main-wrapper header .logo img {
+  max-width: 40%;
+}
+.main-wrapper header nav {
+  display: inline;
+  max-width: 60%;
+  height: 30%;
+  color: #fa5732;
+  font-size: 1em;
+  text-transform: uppercase;
+  border-top: 1px solid #627d8a;
+  border-bottom: 1px solid #627d8a;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+.main-wrapper header nav a {
+  margin: 6%;
+}
+.main-wrapper header nav a:link {
+  color: #fa5732;
+  text-decoration: none;
+}
+.main-wrapper header nav a:hover {
+  color: #fa5732;
+  text-decoration: underline;
+}
+.main-wrapper header nav a:visited {
+  color: #c12805;
+  text-decoration: none;
+}
+.main-wrapper .toolbar {
+  display: block;
+  margin: 2%;
+}
+.main-wrapper .post-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-wrapper .post-list article {
+  flex: 40%;
+  background-color: #fff;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  padding: 1%;
+}
+.main-wrapper .post-list article img {
+  max-width: 100%;
+}
+.main-wrapper .about {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.main-wrapper .about img {
+  max-width: 100%;
+}
+.main-wrapper .contact-form {
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.main-wrapper .contact-form h4 {
+  float: right;
+}
+.main-wrapper .contact-form h1 {
+  float: right;
+}
+.main-wrapper .contact-form .form-control {
+  width: 100%;
+  border: 1px solid #627d8a;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  padding: 1%;
+  font-size: 1em;
+}
+.main-wrapper .contact-form .submit-btn {
+  background-color: #fa5732;
+  border: 0px;
+  color: #fff;
+  padding: 1% 7% 1% 7%;
+}
+.main-wrapper .contact-form .submit-btn:hover {
+  background-color: #c12805;
+}
+.main-wrapper footer {
+  margin-left: 2%;
+  margin-right: 2%;
+  font-size: 0.75em;
+}
+
+/*# sourceMappingURL=style2.css.map */
