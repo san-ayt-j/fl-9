@@ -62,19 +62,23 @@
             
             a{
                 margin:11%;
-            }
-            a:link{
+                
+            &:link{
                 color:$fontHeaderColor;
                 text-decoration:none;
             }
-            a:hover{
+            
+            &:hover{
                 color:$fontHeaderColor;
                 text-decoration:underline;
             }
-            a:visited{
+            
+            &:visited{
                 color:darken($fontHeaderColor,20%);
                 text-decoration:none;
             }
+            }
+            
         }
     }
     
@@ -87,11 +91,13 @@
             border:1px solid $fontHeaderColor;
             padding:1%;
             background:none;
-        }
-        
-        input::placeholder{
+            
+            &::placeholder{
             color:$fontHeaderColor;
         }
+        }
+        
+        
     }
     
     .post-list {
@@ -176,10 +182,12 @@
             border:0px;
             color:#fff;
             padding:1% 7% 1% 7%;
-        }
-        .submit-btn:hover{
+            
+            &:hover{
             background-color:darken($fontHeaderColor,20%);
         }
+        }
+        
         
     }
     
