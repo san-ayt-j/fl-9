@@ -4,12 +4,16 @@
   padding-left: 5%;
   padding-right: 5%;
   background-color: #ededed;
-  font-family: Garamond, Georgia, sans-serif;
+  font-family: Garamond, Georgia, serif;
   color: #737373;
 }
 .main-wrapper h1, .main-wrapper h4 {
   color: #fa5732;
   text-transform: uppercase;
+}
+.main-wrapper h1 {
+  margin-top: 5%;
+  margin-bottom: 1%;
 }
 .main-wrapper h3 {
   color: #627d8a;
@@ -141,6 +145,7 @@
   background: none;
   padding: 1%;
   font-size: 1em;
+  font-family: inherit;
 }
 .main-wrapper .contact-form .submit-btn {
   display: table;
