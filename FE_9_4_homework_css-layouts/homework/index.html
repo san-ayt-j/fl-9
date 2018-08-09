@@ -7,6 +7,7 @@
   <title>CSS Layouts</title>
 </head>
 <body>
+    
     <header>
       <img src="img/apples.jpg" alt="Apples" />
       <h1>Black &amp; White</h1>
@@ -14,6 +15,7 @@
       <h4>Black &amp; White</h4>
       <button type="button" onclick="#">Show more</button>
     </header>
+    
     <nav>
       <ul>
         <li class="nav-item"><a href="#" class="nav-item-link">Home</a></li>
@@ -22,42 +24,101 @@
         <li class="nav-item"><a href="#" class="nav-item-link">Shop</a></li>
       </ul>
     </nav>
+    
     <main>
+      
       <section id="about">
         <h3>Lorem ipsum dolor sit amet.<br>Mauris <b>eu eros</b> eget lacus.</h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam arcu quam, eleifend nec semper in, accumsan in nunc. Nulla lacus tortor, laoreet sit amet faucibus eget, facilisis ac orci. Nullam volutpat quam quis sollicitudin sagittis. Praesent venenatis placerat est quis convallis. Donec.</p>
       </section>
+      
       <section id="articles">
+        
         <h3>Read some of our <b>featured articles</b></h3>
+        
         <article>
           <h6>January'15<b>South France</b></h6>
           <img src="img/sample.jpg" alt="Laptop" />
-          <button type="button" onclick="">172 &hearts;</button>
+          <button type="button" onclick="#">172 &hearts;</button>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis euismod est ac vestibulum. Integer dictum mi vitae arcu tincidunt vehicula. Vestibulum lectus nulla, dictum sit amet ex nec, pharetra.</p>
         </article>
+        
         <article>
           <h6>January'15<b>South America</b></h6>
           <img src="img/sample3.jpg" alt="Telephone" />
-          <button type="button" onclick="">172 &hearts;</button>
+          <button type="button" onclick="#">172 &hearts;</button>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis euismod est ac vestibulum. Integer dictum mi vitae arcu tincidunt vehicula. Vestibulum lectus nulla, dictum sit amet ex nec, pharetra.</p>
         </article>
+        
         <article>
           <h6>January'15<b>South France</b></h6>
           <img src="img/sample.jpg" alt="Laptop" />
-          <button type="button" onclick="">20 &hearts;</button>
+          <button type="button" onclick="#">20 &hearts;</button>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis euismod est ac vestibulum. Integer dictum mi vitae arcu tincidunt vehicula. Vestibulum lectus nulla, dictum sit amet ex nec, pharetra.</p>
         </article>
+        
         <article>
           <h6>January'15<b>South America</b></h6>
           <img src="img/sample3.jpg" alt="Telephone" />
-          <button type="button" onclick="">150 &hearts;</button>
+          <button type="button" onclick="#">150 &hearts;</button>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut venenatis euismod est ac vestibulum. Integer dictum mi vitae arcu tincidunt vehicula. Vestibulum lectus nulla, dictum sit amet ex nec, pharetra.</p>
         </article>
+      
       </section>
+      
       <section id="email">
-        <h3>Subscribe to our <b>newsletter</b></h3>
+        
+        <form class="email" action="#">
+          <h3>Subscribe to our <b>newsletter</b></h3>
+          <input type="email" placeholder="Enter your e-mail adress">
+          <button type="submit">Subscribe</button>
+        </form>
+      
       </section>
+    
     </main>
-    <footer></footer>
+    
+    <footer>
+      
+      <div class="footer-column">
+        <h4>Black &amp; White</h4>
+        <p>morbi quis metus magna. Maecenas feugiat tristique odio, ac ultrices lacus convallis ut. Aenean elementum purus mi, ut aliquam velit semper id</p>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Last Tweet</h4>
+        <p>...donec commodo non erat ut ullamcorper. Integer id sapien nisl. Pellentesque quis turpis et dolor euismod rhoncus. Vestibulum ante massa</p>
+        <p>3 hours ago</p>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <p><a>www.loremipsumdolar.nl</a></p>
+        <p>182 AB Your Street Name</p>
+        <p>e-mail@loremipsum.com</p>
+        <p>+(121)01 23 45 679</p>
+      </div>
+      
+      <div class="footer-column">
+        <h4>Newsletter</h4>
+        <p>Etiam cursus ut arcu quis bibendum. Maecenas convallis lacus eu diam luctus.</p>
+        <form class="email" action="#">
+          <input type="email" placeholder="Enter your e-mail adress">
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+      
+      <hr>
+      
+      <p>&copy; 2015 Ruben Stom</p>
+      <ul>
+        <li class="nav-item"><a href="#" class="nav-item-link">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-item-link">About</a></li>
+        <li class="nav-item"><a href="#" class="nav-item-link">Shop</a></li>
+        <li class="nav-item"><a href="#" class="nav-item-link">Vacancies</a></li>
+      </ul>
+    
+    </footer>
+
 </body>
 </html>
