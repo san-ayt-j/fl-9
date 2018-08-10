@@ -1,0 +1,163 @@
+*{
+    margin:0;
+    Padding:0;
+    box-sizing: border-box;
+    font-family: "Open Sans";
+    overflow:auto;
+}
+
+h1,h3,h4,h6{
+    font-weight: normal;
+}
+
+img {
+    max-width:100%;
+    width:auto;
+    height:auto;
+}
+
+button {
+    color:#fff;
+    border:1px solid #fff;
+    background:none;
+}
+
+.header{
+    position:relative;
+    color:#fff;
+}
+
+.header img {
+    margin:0 auto;
+    width:100%;
+}
+
+.centered-header{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align:center;
+}
+
+.centered-header h1,.top-left-header h4{
+    width:100%;
+    text-transform:uppercase;
+}
+
+.centered-header h1{
+    font-size:2vw;
+}
+
+.top-left-header {
+    position:absolute;
+    top:10%;
+    left:5%;
+}
+
+.header-button {
+    position:absolute;
+    left:auto;
+    right:auto;
+    bottom:15%;
+}
+
+.header-button button{
+    padding:1% 3% 3% 1%;
+}
+
+.main-nav{
+    position:absolute;
+    top:10%;
+    right:5%;
+    width:30%;
+}
+
+.main-nav .nav-item-link{
+    color:#fff;
+    text-decoration:none;
+}
+
+.about{
+    display:flex;
+    flex-direction:row;
+    padding-left:5%;
+    padding-right:5%;
+    margin-top:10%;
+    margin-bottom:10%;
+}
+
+.about-left, .about-right {
+    flex:50%;
+}
+
+.about-left{
+    font-size:2vw;
+}
+
+.articles{
+    background:gainsboro;
+    padding-right:5%;
+    padding-left:5%;
+}
+
+.articles .articles-header{
+    padding-top:10%;
+    padding-bottom:5%;
+    text-align:center;
+    font-size:2vw;
+}
+
+.articles .article-items .article-france,.articles .article-items .article-america{
+    display:flex;
+    align-items:center;
+}
+
+.articles .article-items .article-america{
+    flex-direction:row-reverse;
+}
+
+.articles .article-items .article-img{
+    flex:60%;
+    position:relative;
+    color:#fff;
+    margin:1%;
+}
+
+.articles .article-items .article-img img{
+    width:100%;
+}
+
+.articles .article-items .article-img button{
+    position:absolute;
+    top:5%;
+    right:5%;
+    padding:1%;
+}
+
+.articles .article-items .article-img h6{
+    position:absolute;
+    left:5%;
+    bottom:5%;
+}
+
+.articles .article-items .article-text{
+    flex:40%;
+    text-align:center;
+    margin:1%;
+}
+
+.articles .email{
+    background:#fff;
+    margin:1%;
+    padding:3% 2% 3% 2%;
+}
+
+.email input{
+    border:1px solid black;
+    flex:60%;
+}
+
+.email label{
+    font-size:2vw;
+}
