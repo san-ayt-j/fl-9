@@ -4,10 +4,39 @@
     box-sizing: border-box;
     font-family: "Open Sans";
     overflow:auto;
+    font-size:1em;
 }
 
 h1,h3,h4,h6{
     font-weight: normal;
+}
+
+h1{
+    font-size:3em;
+}
+
+h3{
+    font-size:1.5em;
+}
+
+h4{
+    font-size:1.25em;
+}
+
+h6{
+    font-size:1em;
+}
+
+a:link{
+    text-decoration:none;
+}
+
+a:visited{
+    color:#B7C8D9;
+}
+
+a:hover{
+    text-decoration:underline;
 }
 
 img {
@@ -18,8 +47,12 @@ img {
 
 button {
     color:#fff;
-    border:1px solid #fff;
+    border:2px solid #fff;
     background:none;
+}
+
+main{
+    color:#323436;
 }
 
 .header{
@@ -45,42 +78,38 @@ button {
     text-transform:uppercase;
 }
 
-.centered-header h1{
-    font-size:2vw;
-}
-
 .top-left-header {
     position:absolute;
     top:10%;
     left:5%;
 }
 
-.header-button {
+.header button{
+    padding:1% 5% 1% 5%;
     position:absolute;
     left:auto;
     right:auto;
     bottom:15%;
+    background:#323436;
+    opacity:0.5;
 }
 
-.header-button button{
-    padding:1% 3% 3% 1%;
+.header button:hover{
+    opacity:1;
 }
 
 .main-nav{
     position:absolute;
     top:10%;
     right:5%;
-    width:30%;
 }
 
-.main-nav .nav-item-link{
+.main-nav a{
     color:#fff;
-    text-decoration:none;
 }
 
 .about{
     display:flex;
-    flex-direction:row;
     padding-left:5%;
     padding-right:5%;
     margin-top:10%;
@@ -92,11 +121,11 @@ button {
 }
 
 .about-left{
-    font-size:2vw;
+    font-size:1.5em;
 }
 
 .articles{
-    background:gainsboro;
+    background:#f0f0f0;
     padding-right:5%;
     padding-left:5%;
 }
@@ -105,12 +134,12 @@ button {
     padding-top:10%;
     padding-bottom:5%;
     text-align:center;
-    font-size:2vw;
 }
 
 .articles .article-items .article-france,.articles .article-items .article-america{
     display:flex;
     align-items:center;
+    margin-top:1%;
 }
 
 .articles .article-items .article-america{
@@ -121,7 +150,16 @@ button {
     flex:60%;
     position:relative;
     color:#fff;
-    margin:1%;
+}
+
+.articles .article-items .article-img:after{
+    content: '';
+    position: absolute;
+    top:0; 
+    left:0; 
+    bottom:0; 
+    right:0;
+    background:radial-gradient(circle, transparent 50%, #000 150%);
 }
 
 .articles .article-items .article-img img{
@@ -131,33 +169,127 @@ button {
 .articles .article-items .article-img button{
     position:absolute;
     top:5%;
-    right:5%;
+    right:2%;
     padding:1%;
+    background:#323436;
+    opacity:0.5;
+    z-index:3;
+}
+
+.articles .article-items .article-img button:hover{
+    opacity:1;
 }
 
 .articles .article-items .article-img h6{
     position:absolute;
-    left:5%;
+    left:2%;
     bottom:5%;
+    z-index:3;
 }
 
 .articles .article-items .article-text{
     flex:40%;
     text-align:center;
-    margin:1%;
 }
 
-.articles .email{
+.articles .email-form{
     background:#fff;
-    margin:1%;
+    margin-top:4%;
+    margin-bottom:4%;
     padding:3% 2% 3% 2%;
 }
 
-.email input{
-    border:1px solid black;
-    flex:60%;
+.email-form .input-email{
+    display:flex;
+    align-items:center;
 }
 
-.email label{
-    font-size:2vw;
+.email-form .input-email h3{
+    flex:25%;
+}
+
+.email-form .input-email input{
+    flex:55%;
+    border:1px solid #323436;
+    padding:1%;
+    background:#f0f0f0;
+}
+
+
+.email-form .input-email button{
+    flex:20%;
+    background:#323436;
+    border:3px solid #323436;
+    padding:1%;
+}
+
+.email-form .input-email button:hover{
+    opacity:0.5;
+}
+
+footer{
+    padding-right:5%;
+    padding-left:5%;
+    color:#a4a4a4;
+}
+
+footer h4{
+    color:#323436;
+}
+
+.footer-column{
+    display:flex;
+    padding-top:10%;
+    padding-bottom:10%;
+}
+
+.footer-column .column-item{
+    flex:25%;
+}
+
+.footer-column .column-item p{
+    padding-top:2%;
+}
+
+.footer-column .column-item:nth-of-type(2){
+    font-style:italic;
+}
+
+.footer-column .column-item .email-footer{
+    display:flex;
+    padding-top:2%;
+}
+
+.footer-column .column-item .email-footer input{
+    flex:70%;
+    border:1px solid #323436;
+    padding:1%;
+    background:#f0f0f0;
+}
+
+.footer-column .column-item .email-footer button{
+    flex:30%;
+    background:#323436;
+    border:3px solid #323436;
+    padding:1%;
+}
+
+.footer-column .column-item .email-footer button:hover{
+    opacity:0.5;
+}
+
+.footer-bottom{
+    padding-top:1%;
+    padding-bottom:1%;
+    display:flex;
+}
+
+.footer-bottom p{
+    flex:50%;
+}
+
+.footer-bottom .footer-nav a{
+    flex:50%;
+    flex-direction:row-reverse;
+    color:#a4a4a4;
 }
