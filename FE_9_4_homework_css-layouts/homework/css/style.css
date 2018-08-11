@@ -15,7 +15,7 @@ h1{
     font-size:3em;
 }
 
-h3{
+h3,.about-left{
     font-size:1.5em;
 }
 
@@ -32,7 +32,7 @@ a:link{
 }
 
 a:visited{
-    color:#B7C8D9;
+    color:rgb(183,200,217);
 }
 
 a:hover{
@@ -45,36 +45,49 @@ img {
     height:auto;
 }
 
-button {
-    color:#fff;
-    border:2px solid #fff;
+button,.header,.main-nav a,.articles .article-items .article-img{
+    color:rgb(255,255,255);
+}
+
+button{
+    border:2px solid rgb(255,255,255);
     background:none;
 }
 
-main{
-    color:#323436;
-}
-
-input::placeholder{
+main,input::placeholder,footer h4,.footer-bottom .footer-nav a{
     color:rgb(50,52,54);
 }
 
-.header{
+.header,.articles .article-items .article-img{
     position:relative;
-    color:#fff;
+}
+
+.header img,.centered-header h1,.top-left-header h4,.footer-bottom .footer-nav,.articles .article-items .article-img img,.main-nav{
+    width:100%;
 }
 
 .header img {
     margin:0 auto;
-    width:100%;
+}
+
+.centered-header,.articles .article-items .article-img:after{
+    position: absolute;
+}
+
+.centered-header,.header button{
+    transform: translate(-50%, -50%);
+}
+
+.centered-header,.articles .article-items .article-text,.articles .articles-header{
+    text-align:center;
+}
+
+.centered-header,.header button{
+    left: 50%;
 }
 
 .centered-header{
-    position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align:center;
 }
 
 .centered-header span{
@@ -82,182 +95,163 @@ input::placeholder{
 }
 
 .centered-header h1,.top-left-header h4{
-    width:100%;
     text-transform:uppercase;
     letter-spacing:0.2em;
 }
 
-.top-left-header {
+.top-left-header,.header button,.main-nav,.articles .article-items .article-img button,.articles .article-items .article-img h6{
     position:absolute;
+}
+
+.top-left-header,.main-nav{
     top:10%;
+}
+
+.top-left-header {
     left:5%;
+}
+
+.header button,.articles .article-items .article-img button{
+    background:rgba(50,52,54,0.5);
 }
 
 .header button{
     padding:1% 5% 1% 5%;
-    position:absolute;
-    left: 50%;
     bottom:15%;
-    transform: translate(-50%, -50%);
-    background:rgba(50,52,54,0.5);
 }
 
-.header button:hover{
+.header button:hover,.articles .article-items .article-img button:hover,.email-form .input-email button,.footer-column .column-item .email-footer button{
     background:rgb(50,52,54);
 }
 
-.main-nav{
-    position:absolute;
-    top:10%;
-    right:5%;
+.main-nav,.footer-bottom .footer-nav{
     text-align:right;
-    width:100%;
 }
 
-.main-nav a{
-    color:#fff;
+.main-nav{
+    right:5%;
+}
+
+.main-nav a,.about,.articles,footer{
     padding-left:5%;
+}
+
+.about,.articles,footer{
+    padding-right:5%;
+}
+
+.about,.articles .article-items .article-france,.articles .article-items .article-america,.email-form .input-email,.footer-column,.footer-column .column-item .email-footer,.footer-bottom{
+    display:flex;
 }
 
 .about{
-    display:flex;
-    padding-left:5%;
-    padding-right:5%;
     margin-top:10%;
     margin-bottom:10%;
 }
 
-.about-left, .about-right {
+.about-left, .about-right,.footer-bottom p,.footer-bottom .footer-nav a{
     flex:50%;
 }
 
-.about-left{
-    font-size:1.5em;
+.articles,.email-form .input-email input,.footer-column .column-item .email-footer input,hr{
+    background:rgb(240,240,240);
 }
 
-.articles{
-    background:#f0f0f0;
-    padding-right:5%;
-    padding-left:5%;
+.articles .articles-header,.footer-column{
+    padding-top:10%;
 }
 
 .articles .articles-header{
-    padding-top:10%;
     padding-bottom:5%;
-    text-align:center;
+}
+
+.articles .article-items .article-france,.articles .article-items .article-america,.email-form .input-email{
+    align-items:center;
 }
 
 .articles .article-items .article-france,.articles .article-items .article-america{
-    display:flex;
-    align-items:center;
     margin-top:1%;
 }
 
-.articles .article-items .article-america{
+.articles .article-items .article-america,.footer-bottom .footer-nav a{
     flex-direction:row-reverse;
 }
 
 .articles .article-items .article-img{
     flex:60%;
-    position:relative;
-    color:#fff;
 }
 
 .articles .article-items .article-img:after{
     content: '';
-    position: absolute;
     top:0; 
     left:0; 
     bottom:0; 
     right:0;
-    background:radial-gradient(circle, transparent 50%, #000 150%);
+    background:radial-gradient(circle, transparent 50%, rgb(0,0,0) 150%);
 }
 
-.articles .article-items .article-img img{
-    width:100%;
-}
-
-.articles .article-items .article-img button{
-    position:absolute;
-    top:5%;
-    right:2%;
-    padding:1%;
-    background:rgba(50,52,54,0.5);
+.articles .article-items .article-img button,.articles .article-items .article-img h6{
     z-index:3;
 }
 
-.articles .article-items .article-img button:hover{
-    background:rgb(50,52,54);
+.articles .article-items .article-img button,.email-form .input-email input,.email-form .input-email button,.footer-column .column-item .email-footer input,.footer-column .column-item .email-footer button{
+    padding:1%;
+}    
+    
+.articles .article-items .article-img button{
+    top:5%;
+    right:2%;
 }
 
 .articles .article-items .article-img h6{
-    position:absolute;
     left:2%;
     bottom:5%;
-    z-index:3;
 }
 
 .articles .article-items .article-text{
     flex:40%;
-    text-align:center;
 }
 
 .articles .email-form{
-    background:#fff;
+    background:rgb(255,255,255);
     margin-top:4%;
     margin-bottom:4%;
     padding:3% 2% 3% 2%;
 }
 
-.email-form .input-email{
-    display:flex;
-    align-items:center;
+.email-form .input-email h3,.footer-column .column-item{
+    flex:25%;
 }
 
-.email-form .input-email h3{
-    flex:25%;
+.email-form .input-email input,.footer-column .column-item .email-footer input{
+    border:1px solid rgb(50,52,54);
 }
 
 .email-form .input-email input{
     flex:55%;
-    border:1px solid #323436;
-    padding:1%;
-    background:#f0f0f0;
 }
 
+.email-form .input-email button,.footer-column .column-item .email-footer button{
+    border:3px solid rgb(50,52,54);
+}
 
 .email-form .input-email button{
     flex:20%;
-    background:#323436;
-    border:3px solid #323436;
-    padding:1%;
 }
 
-.email-form .input-email button:hover{
+.email-form .input-email button:hover,.footer-column .column-item .email-footer button:hover{
     opacity:0.5;
 }
 
 footer{
-    padding-right:5%;
-    padding-left:5%;
-    color:#a4a4a4;
-}
-
-footer h4{
-    color:#323436;
+    color:rgb(164,164,164);
 }
 
 .footer-column{
-    display:flex;
-    padding-top:10%;
     padding-bottom:10%;
 }
 
-.footer-column .column-item{
-    flex:25%;
-}
-
-.footer-column .column-item p{
+.footer-column .column-item p,.footer-column .column-item .email-footer{
     padding-top:2%;
 }
 
@@ -271,53 +265,24 @@ footer h4{
     font-weight:bold;
 }
 
-.footer-column .column-item .email-footer{
-    display:flex;
-    padding-top:2%;
-}
-
 .footer-column .column-item .email-footer input{
     flex:70%;
-    border:1px solid #323436;
-    padding:1%;
-    background:#f0f0f0;
 }
 
 .footer-column .column-item .email-footer button{
     flex:30%;
-    background:#323436;
-    border:3px solid #323436;
-    padding:1%;
-}
-
-.footer-column .column-item .email-footer button:hover{
-    opacity:0.5;
 }
 
 .footer-bottom{
     padding-top:1%;
     padding-bottom:1%;
-    display:flex;
-}
-
-.footer-bottom p{
-    flex:50%;
 }
 
 .footer-bottom .footer-nav a{
-    flex:50%;
-    flex-direction:row-reverse;
-    color:#323436;
     padding-left:3%;
 }
 
-.footer-bottom .footer-nav{
-    text-align:right;
-    width:100%;  
-}
-
 hr{
-    background:rgb(240,240,240);
     height:2px;
     border:none;
 }
