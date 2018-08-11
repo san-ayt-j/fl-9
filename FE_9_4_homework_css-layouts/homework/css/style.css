@@ -27,6 +27,10 @@ h6{
     font-size:1em;
 }
 
+a{
+    padding-left:2%;
+}
+
 a:link{
     text-decoration:none;
 }
@@ -53,6 +57,10 @@ button {
 
 main{
     color:#323436;
+}
+
+input::placeholder{
+    color:rgb(50,52,54);
 }
 
 .header{
@@ -82,20 +90,20 @@ main{
     position:absolute;
     top:10%;
     left:5%;
+    width:100%;
 }
 
 .header button{
     padding:1% 5% 1% 5%;
     position:absolute;
-    left:auto;
-    right:auto;
+    left: 50%;
     bottom:15%;
-    background:#323436;
-    opacity:0.5;
+    transform: translate(-50%, -50%);
+    background:rgb(50,52,54,0.5);
 }
 
 .header button:hover{
-    opacity:1;
+    background:rgb(50,52,54,1);
 }
 
 .main-nav{
@@ -171,13 +179,12 @@ main{
     top:5%;
     right:2%;
     padding:1%;
-    background:#323436;
-    opacity:0.5;
+    background:rgb(50,52,54,0.5);
     z-index:3;
 }
 
 .articles .article-items .article-img button:hover{
-    opacity:1;
+    background:rgb(50,52,54,1);
 }
 
 .articles .article-items .article-img h6{
@@ -255,6 +262,10 @@ footer h4{
     font-style:italic;
 }
 
+.footer-column .column-item:nth-last-of-type(p){
+    color:red;
+}
+
 .footer-column .column-item .email-footer{
     display:flex;
     padding-top:2%;
@@ -291,5 +302,11 @@ footer h4{
 .footer-bottom .footer-nav a{
     flex:50%;
     flex-direction:row-reverse;
-    color:#a4a4a4;
+    color:#323436;
+}
+
+hr{
+    background:rgb(240,240,240);
+    height:2px;
+    border:none;
 }
