@@ -27,10 +27,6 @@ h6{
     font-size:1em;
 }
 
-a{
-    padding-left:2%;
-}
-
 a:link{
     text-decoration:none;
 }
@@ -81,16 +77,20 @@ input::placeholder{
     text-align:center;
 }
 
+.centered-header span{
+    font-size:2em;
+}
+
 .centered-header h1,.top-left-header h4{
     width:100%;
     text-transform:uppercase;
+    letter-spacing:0.2em;
 }
 
 .top-left-header {
     position:absolute;
     top:10%;
     left:5%;
-    width:100%;
 }
 
 .header button{
@@ -110,10 +110,13 @@ input::placeholder{
     position:absolute;
     top:10%;
     right:5%;
+    text-align:right;
+    width:100%;
 }
 
 .main-nav a{
     color:#fff;
+    padding-left:5%;
 }
 
 .about{
@@ -258,12 +261,14 @@ footer h4{
     padding-top:2%;
 }
 
-.footer-column .column-item:nth-of-type(2){
+.footer-column .column-item:nth-of-type(2) p{
     font-style:italic;
 }
 
-.footer-column .column-item:nth-last-of-type(p){
-    color:red;
+.footer-column .column-item:nth-of-type(2) p:last-child{
+    color:rgb(240,240,240);
+    font-style:normal;
+    font-weight:bold;
 }
 
 .footer-column .column-item .email-footer{
@@ -303,6 +308,12 @@ footer h4{
     flex:50%;
     flex-direction:row-reverse;
     color:#323436;
+    padding-left:3%;
+}
+
+.footer-bottom .footer-nav{
+    text-align:right;
+    width:100%;  
 }
 
 hr{
