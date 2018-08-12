@@ -2,7 +2,7 @@
  * Feel free to change name of colors if you need it
  * Feel free to add new colors if you need it
  */
-:root {
+/* :root {
   --bg-color--dark: #0a1223;
   --bg-color--light: #fff;
   --link: #5d5d5d;
@@ -10,16 +10,148 @@
   --link--hover: #54597d;
   --article-title: #ddd;
   --article-title--dark: #000;
-  --thumbnail--description: #5d5d5d;
+  --thumbnail--description: #5d5d5d; */
 
   /* These styles are needed only for media query max-width: 575px */
 
   /* The 'Up' button (circle button at right bottom corner) */
-  --btn-color: #fff;
+/*  --btn-color: #fff;
   --btn-bg-color: #5ebcff;
 
   --navigation-border-bottom: #ddd;
-  --thumbnail-title: #484747;
-}
+  --thumbnail-title: #484747; 
+} */
 
 /* Your styles go here */
+
+body{
+  background-color:#0a1223;
+  font-family:"Arial","Helvetica";
+  font-size:1em;
+  margin:0;
+  padding:0;
+}
+
+img{
+  max-width:100%;
+}
+
+h1{
+  font-size:5em;
+  color:#fff;
+}
+
+h3{
+  font-size:2em;
+  background:linear-gradient(to left,#5d5d5d,#ddd);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+p{
+  color:#5d5d5d;
+  text-indent:1.5em;
+}
+
+a{
+  font-size:1.25em;
+}
+
+.main-navigation{
+  margin-left:2%;
+  margin-right:2%;
+  margin-top:3%;
+  text-align:right;
+}
+
+.main-navigation ul{
+  list-style:none;
+  padding:0;
+}
+
+.main-navigation li{
+  padding:2%;
+  display:inline;
+}
+
+.main-navigation a{
+  color:#5d5d5d;
+  text-decoration:none;
+}
+
+.main-navigation a:hover,.main-navigation a:visited{
+  color:#54597d;
+}
+
+.page-header{
+  margin-top:15%;
+  margin-left:5%;
+  margin-right:5%;
+  text-align:center;
+}
+
+.articles{
+  margin-left:12%;
+  margin-right:12%;
+  margin-top:15%;
+}
+
+.article-item{
+  display:flex;
+  align-items:center;
+}
+
+.article-item .article-img{
+  flex:50%;
+}
+
+.article-item .article-text{
+  flex:50%;
+}
+
+.article-item .article-text p{
+  text-align:justify;
+}
+
+.article-item:nth-child(odd){
+  flex-direction:row-reverse;
+}
+
+@media (max-width:991px){
+  .main-navigation{
+    text-align:center;
+  }
+  
+  .article-item,.article-item:nth-child(odd){
+    flex-direction:column-reverse;
+  }
+}
+
+@media (max-width:575px){
+  body{
+  background-color:#fff;
+  }
+  
+  h1{
+    color:#000;
+  }
+  
+  h3{
+    background:none #484747;
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+  }
+  
+  .main-navigation{
+    text-align:left;
+  }
+  
+  .main-navigation li{
+    display:block;
+    border-bottom:1px solid #ddd;
+  }
+  
+  .main-navigation a:hover, .main-navigation a:visited{
+    font-weight:bold;
+  }
+}
