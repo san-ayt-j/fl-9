@@ -28,7 +28,10 @@ body{
   background-color:#0a1223;
   font-family:"Arial","Helvetica";
   font-size:1em;
-  margin:0;
+  margin:3% 0% 15% 0%;
+}
+
+body,.main-navigation ul{
   padding:0;
 }
 
@@ -38,6 +41,9 @@ img{
 
 h1{
   font-size:5em;
+}
+
+h1,.up-button a{
   color:#fff;
 }
 
@@ -48,25 +54,30 @@ h3{
   -webkit-text-fill-color:transparent;
 }
 
-p{
+p,.main-navigation a{
   color:#5d5d5d;
+}
+
+p{
   text-indent:1.5em;
 }
 
-a{
+a,.up-button a{
   font-size:1.25em;
+}
+
+.main-navigation,.up-button a{
+  text-align:right;
 }
 
 .main-navigation{
   margin-left:2%;
   margin-right:2%;
-  margin-top:3%;
-  text-align:right;
+  
 }
 
 .main-navigation ul{
   list-style:none;
-  padding:0;
 }
 
 .main-navigation li{
@@ -74,8 +85,7 @@ a{
   display:inline;
 }
 
-.main-navigation a{
-  color:#5d5d5d;
+.main-navigation a,.up-button a{
   text-decoration:none;
 }
 
@@ -83,17 +93,22 @@ a{
   color:#54597d;
 }
 
-.page-header{
+.page-header,.articles,.up-button{
   margin-top:15%;
-  margin-left:5%;
+}
+
+.page-header,.up-button{
   margin-right:5%;
+}
+
+.page-header{
+  margin-left:5%;
   text-align:center;
 }
 
 .articles{
   margin-left:12%;
   margin-right:12%;
-  margin-top:15%;
 }
 
 .article-item{
@@ -101,11 +116,7 @@ a{
   align-items:center;
 }
 
-.article-item .article-img{
-  flex:50%;
-}
-
-.article-item .article-text{
+.article-item .article-img,.article-item .article-text{
   flex:50%;
 }
 
@@ -115,6 +126,24 @@ a{
 
 .article-item:nth-child(odd){
   flex-direction:row-reverse;
+}
+
+.up-button{
+  display:none;
+  margin-bottom:5%;
+}
+  
+.up-button a{
+   padding:5%;
+  font-weight:bold;
+  background:#5ebcff;
+  border:none;
+  border-radius:50%;
+  box-shadow: 5px 10px 18px #ddd;
+}
+  
+.up-button a:hover{
+  background:#54597d;
 }
 
 @media (max-width:991px){
@@ -129,7 +158,8 @@ a{
 
 @media (max-width:575px){
   body{
-  background-color:#fff;
+    background-color:#fff;
+    margin:0;
   }
   
   h1{
@@ -153,5 +183,10 @@ a{
   
   .main-navigation a:hover, .main-navigation a:visited{
     font-weight:bold;
+  }
+  
+  .up-button{
+    display:flex;
+    flex-direction:row-reverse;
   }
 }
