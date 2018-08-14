@@ -130,19 +130,22 @@ a,.up-button a{
 
 .up-button{
   display:none;
-  margin-bottom:5%;
-}
-  
-.up-button a{
-   padding:5%;
-  font-weight:bold;
+  position:fixed;
+  bottom:5%;
+  right:2%;
+  z-index:3;
+  padding:5%;
   background:#5ebcff;
   border:none;
   border-radius:50%;
   box-shadow: 5px 10px 18px #ddd;
 }
   
-.up-button a:hover{
+.up-button a{
+  font-weight:bold;
+}
+  
+.up-button:hover{
   background:#54597d;
 }
 
@@ -186,7 +189,6 @@ a,.up-button a{
   }
   
   .up-button{
-    display:flex;
-    flex-direction:row-reverse;
-  }
+    display:inline-block;
+    }
 }
