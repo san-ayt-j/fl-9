@@ -1,8 +1,8 @@
-var lengthA = parseInt(prompt('Input length of the first side','a length'));
-var lengthB = parseInt(prompt('Input length of the second side','b length'));
-var angle = parseInt(prompt('Input angle','angle'));
+let lengthA = parseInt(prompt('Input length of the first side','a length'));
+let lengthB = parseInt(prompt('Input length of the second side','b length'));
+let angle = parseInt(prompt('Input angle','angle'));
 
-var validData = lengthA !== null && lengthA >= 0;
+let validData = lengthA !== null && lengthA >= 0;
 
 if (validData) {
     validData = lengthB !== null && lengthB >= 0;
@@ -17,10 +17,13 @@ if (!validData) {
 }
 
 if (validData){
-    var lengthC = Math.sqrt(Math.pow(lengthA,2)+Math.pow(lengthB,2)-2*lengthA*lengthB*Math.cos(angle*Math.PI/180));
-    var perimeter = lengthA + lengthB + lengthC; 
-    var semiPerimeter = perimeter / 2;
-    var square = Math.sqrt(semiPerimeter*(semiPerimeter-lengthA)*(semiPerimeter-lengthB)*(semiPerimeter-lengthC));
+    const degree = 180;
+    let lengthC = Math.sqrt(Math.pow(lengthA,2) + Math.pow(lengthB,2) - 
+        2 * lengthA * lengthB * Math.cos(angle * Math.PI / degree));
+    let perimeter = lengthA + lengthB + lengthC; 
+    let semiPerimeter = perimeter / 2;
+    let square = Math.sqrt(semiPerimeter * (semiPerimeter - lengthA) * 
+        (semiPerimeter - lengthB) * (semiPerimeter - lengthC));
     
     lengthC = +(Math.round(lengthC + 'e+2') + 'e-2');
     square = +(Math.round(square + 'e+2') + 'e-2');
