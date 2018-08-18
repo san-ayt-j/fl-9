@@ -1,10 +1,13 @@
+const startValue = 5;
+const startPrize = 10;
+
 function askEndGame(totalPrize){
     alert('Thank you for a game. Your prize is: ' + totalPrize);
     
     let playAgain = confirm('Do you want to play again?');
     
     if (playAgain === true) {
-        playGame(5, 10, 0);
+        playGame(startValue, startPrize, 0);
     }
 }
 
@@ -20,13 +23,15 @@ function playGame(maxValue, maxPrize, totalPrize) {
             'Attempts left: ' + (3-i) + '\n' + 
             'Total prize: ' + totalPrize + '$' + '\n' + 
             'Possible prize on current attempt: ' + (totalPrize+thisGamePrize) + '$');
+            
+        userNumber = parseInt(userNumber);
         
         if (userNumber === null || userNumber === '') {
             askEndGame(totalPrize);
             break;
         }
         
-        if (userNumber == winNumber) {
+        if (userNumber === winNumber) {
             totalPrize = totalPrize + thisGamePrize;
             
             let playAgain = confirm('Congratulation! Your prize is: ' + totalPrize + 
@@ -35,8 +40,7 @@ function playGame(maxValue, maxPrize, totalPrize) {
             if (playAgain === true) {
                 playGame(maxValue*2, maxPrize*3, totalPrize);
                 break;
-            }
-            else {
+            } else {
                 askEndGame(totalPrize);
                 break;
             }
@@ -54,9 +58,7 @@ function playGame(maxValue, maxPrize, totalPrize) {
 let playGameConfirm = confirm('Do you want to play a game?');
 
 if (playGameConfirm === true) {
-    playGame(5, 10, 0);
-}
-
-else {
+    playGame(startValue, startPrize, 0);
+} else {
     alert('You did not become a millionaire, but can.');
 }
