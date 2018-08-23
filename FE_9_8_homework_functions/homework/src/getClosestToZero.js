@@ -1,7 +1,11 @@
 function getClosestToZero(){
-    var closestToZero = Infinity;
+    let closestToZero = Infinity;
     
-    for (var i=0;i<arguments.length;i++){
-        
+    for (let i=0;i<arguments.length;i++){
+         if (Math.abs(arguments[i]) < Math.abs(closestToZero)){
+             closestToZero = arguments[i];
+         }
     }
+    
+    return closestToZero;
 }

@@ -1,6 +1,7 @@
 function getMin(){
-    var minResult = Infinity;
-    for (var i=0;i<arguments.length;i++){
+    let minResult = Infinity;
+    
+    for (let i=0;i<arguments.length;i++){
         if (arguments[i] < minResult){
             minResult = arguments[i];
         }
