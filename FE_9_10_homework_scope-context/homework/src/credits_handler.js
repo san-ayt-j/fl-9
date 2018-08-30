@@ -6,13 +6,13 @@ function userCard(aIndex) {
             operationTime: new Date().toLocaleString()
         }
     }
-    var cardOptions = {
+    let cardOptions = {
         balance: 100,
         transactionLimit: 100,
         historyLogs: [],
         key: aIndex
     }
-    var card = {
+    let card = {
         getCardOptions: function() {
             return cardOptions;
         },
@@ -25,8 +25,7 @@ function userCard(aIndex) {
                 cardOptions.balance = cardOptions.balance - aCredit;
                 cardOptions.historyLogs.push(historyEntry('Withdrawal of credit',aCredit));
                 return true;
-            }
-            else {
+            } else {
                 console.log('Transaction limit is reached or not enought money on balance');
                 return false;
             }
@@ -37,7 +36,8 @@ function userCard(aIndex) {
         },
         transferCredits: function(aCredit, aReciever) {
             if(this.takeCredits(aCredit)){
-                aCredit = aCredit - (aCredit * 0.005);
+                const transactionTaxes = 0.005;
+                aCredit = aCredit - aCredit * transactionTaxes;
                 aReciever.putCredits(aCredit);
             }
         }
@@ -46,17 +46,19 @@ function userCard(aIndex) {
 }
 
 function userAccount(aName) {
-    var user = {
+   let user = {
         name: aName,
         cards: [],
         addCard: function() {
-            if(this.cards.length < 3) {
+            const maxCards = 3;
+            if(this.cards.length < maxCards) {
                 this.cards.push(userCard(this.cards.length + 1));
+            } else {
+                console.log('Card limits reached')
             }
-            else {console.log('Card limits reached')};
         },
         getCardByKey: function(aIndex) {
-            for(var i=0;i<this.cards.length;i++){
+            for(let i=0;i<this.cards.length;i++){
                 if(aIndex === this.cards[i].getCardOptions().key){
                     return this.cards[i];       
                 }
@@ -65,46 +67,3 @@ function userAccount(aName) {
     };
     return user;
 }
-
-/*
-var userCard1 = userCard(1);
-var userCard3 = userCard(3);
-//userCard1.putCredits(100);
-//userCard1.takeCredits(50);
-userCard1.setTransactionLimit(500);
-userCard1.transferCredits(50,userCard3);
-console.log(userCard1.getCardOptions());
-console.log(userCard3.getCardOptions());
-*/
-
-/*
-let user1 = userAccount('Bob');
-
-user1.addCard()
-
-user1.addCard()
-
-
-
-let card1 = user1.getCardByKey(1);
-
-let card2 = user1.getCardByKey(2);
-
-
-
-card1.putCredits(500);
-
-card1.setTransactionLimit(800);
-
-card1.transferCredits(300, card2);
-
-
-
-card2.takeCredits(50);
-
-
-
-console.log(card1.getCardOptions());
-console.log(card2.getCardOptions());
-
-*/
