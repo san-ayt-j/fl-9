@@ -1,2 +1,50 @@
-/* Your styles goes here */
+header, .new-action, .actions-list, footer {
+    margin: 2% 5% 2% 5%;
+    font-family: Arial;
+}
 
+hr {
+    margin: 3% 2% 3% 2%;
+    height: 3px;
+    background-color: #000;
+}
+
+h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+.new-action {
+    display: flex;
+}
+
+.new-action-input {
+    flex: 95%;
+    padding-top: 0.5%;
+}
+
+.new-action-input input {
+    border: 2px solid #000;
+    width: 95%;
+    padding: 1%;
+}
+
+.new-action-btn {
+    flex: 5%;
+}
+
+.new-action-btn i {
+    font-size: 3em;
+    vertical-align: middle;
+}
+
+.actions-list {
+    min-height: 300px;
+}
+
+footer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:15%;
+}

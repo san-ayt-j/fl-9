@@ -7,8 +7,20 @@
   <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
-  <div id="root"></div>
-
+  <div id="root">
+    <header>
+      <h1>TODO Cat List</h1>
+    </header>
+    <div class="new-action" id="new-action">
+      <div class="new-action-input" id="new-action-input"><input type="text" placeholder="Add New Action"></div>
+      <div class="new-action-btn" id="new-action-btn"><i class="material-icons" onclick="addNewAction()">add_box</i></div>
+    </div>
+    <hr>
+    <div id="actions-list" class="actions-list"></div>
+    <footer>
+      <img src="assets/img/cat.png"/>
+    </footer>
+  </div>
   <script src="./src/app.js"></script>
 </body>
 </html>
