@@ -16,11 +16,11 @@ h1 {
 
 .new-action {
     display: flex;
+    align-items: center;
 }
 
 .new-action-input {
     flex: 95%;
-    padding-top: 0.5%;
 }
 
 .new-action-input input {
@@ -31,6 +31,7 @@ h1 {
 
 .new-action-btn {
     flex: 5%;
+    cursor: pointer;
 }
 
 .new-action-btn i {
