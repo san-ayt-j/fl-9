@@ -1,0 +1,17 @@
+section, h1, button, p {
+    margin: 2%;
+}
+
+h1, p {
+    text-align: center;
+}
+
+.main-page button, input {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cancel-save-btns {
+    margin-left: 42.3%;
+}
