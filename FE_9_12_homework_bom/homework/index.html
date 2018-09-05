@@ -10,8 +10,10 @@
     
     <section class="main-page" id="main-page">
       <h1>Simple TODO application</h1>
-      <button id="add-task-btn" type="button" onclick="">Add new task</button>
-      <p id="empty-todo-msg">TODO is empty</p>
+      <button id="add-task-btn" class="add-task-btn" type="button" onclick="addNewTask()">Add new task</button>
+      <div class="task-list" id="task-list">
+        <p id="empty-todo-msg">TODO is empty</p>
+      </div>
     </section>
     
     <section class="add-item-page" id="add-item-page">
@@ -19,7 +21,7 @@
       <input type="text" id="add-task-input" placeholder="">
       <div class="cancel-save-btns">
         <button class="cancel-btn" id="add-cancel-btn" type="button" onclick="">Cancel</button>
-        <button class="save-changes-btn" id="add-save-changes-btn" type="button" onclick="">Save changes</button>
+        <button class="save-changes-btn" id="add-save-changes-btn" type="button" onclick="addTaskSaveChanges()">Save changes</button>
       </div>
     </section>
     

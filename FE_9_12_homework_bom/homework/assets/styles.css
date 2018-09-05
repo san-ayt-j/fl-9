@@ -1,5 +1,5 @@
-section, h1, button, p {
-    margin: 2%;
+section, h1, .add-task-btn, div, p {
+    margin: 3% 15% 3% 15%;
 }
 
 h1, p {
@@ -13,5 +13,9 @@ h1, p {
 }
 
 .cancel-save-btns {
-    margin-left: 42.3%;
+    margin-left: 40%;
+}
+
+.cancel-btn {
+    margin-right: 7%;
 }
