@@ -10,26 +10,26 @@
     
     <section class="main-page" id="main-page">
       <h1>Simple TODO application</h1>
-      <button id="add-task-btn" class="add-task-btn" type="button" onclick="addNewTask()">Add new task</button>
-      <div class="task-list" id="task-list">
+      <button id="add-todo-btn" class="add-todo-btn" type="button" onclick="pageChange('#/add')">Add new task</button>
+      <div class="todo-list" id="todo-list">
         <p id="empty-todo-msg">TODO is empty</p>
       </div>
     </section>
     
     <section class="add-item-page" id="add-item-page">
-      <h1>Add task</h1>
-      <input type="text" id="add-task-input" placeholder="">
+      <h1>Add todo</h1>
+      <input type="text" id="add-todo-input" placeholder="">
       <div class="cancel-save-btns">
-        <button class="cancel-btn" id="add-cancel-btn" type="button" onclick="">Cancel</button>
-        <button class="save-changes-btn" id="add-save-changes-btn" type="button" onclick="addNewTask()">Save changes</button>
+        <button class="cancel-btn" id="add-cancel-btn" type="button" onclick="pageChange('')">Cancel</button>
+        <button class="save-changes-btn" id="add-save-changes-btn" type="button" onclick="addNewtodo()">Save changes</button>
       </div>
     </section>
     
     <section class="modify-item" id="modify-item">
       <h1>Modify item</h1>
-      <input type="text" id="modify-task-input" placeholder="">
+      <input type="text" id="modify-todo-input" placeholder="">
       <div class="cancel-save-btns">
-        <button class="cancel-btn" id="modify-cancel-btn" type="button" onclick="">Cancel</button>
+        <button class="cancel-btn" id="modify-cancel-btn" type="button" onclick="pageChange('')">Cancel</button>
         <button class="save-changes-btn" id="modify-save-changes-btn" type="button" onclick="modifyItemSave()">Save changes</button>
       </div>
     </section>

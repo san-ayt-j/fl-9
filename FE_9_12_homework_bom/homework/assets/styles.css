@@ -1,4 +1,4 @@
-section, h1, .add-task-btn, div, p {
+section, h1, .add-todo-btn, div, p {
     margin: 3% 15% 3% 15%;
 }
 
@@ -10,4 +10,8 @@ h1, p, .cancel-save-btns {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.add-item-page, .modify-item {
+    display: none;
 }
