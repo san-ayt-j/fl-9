@@ -1,8 +1,60 @@
 const rootNode = document.getElementById('root');
 
-const todoItems = [
-    {isDone: false, id: 12345, description: 'Todo 1'}
-];
+let todoItems = [];
+let newObjId = 0;
+
+function getItemObj(index) {
+    for(var i=0; i<todoItems.length; i++) {
+        if(todoItems[i].id === index) {
+            return todoItems[i];
+        }
+    }
+}
+
+function getItemObjArIndex(index) {
+    for(var i=0; i<todoItems.length; i++) {
+        if(todoItems[i].id === index) {
+            return i;
+        }
+    }  
+}
+
+function getDivByObjId(id){
+    let todosList = document.getElementById('todo-list');
+    for (var i=0; i<todosList.childElementCount; i++){
+        var div = todosList.childNodes[i];
+        if (div.tagName === 'DIV'){
+            var divId = parseInt(div.getAttribute('idArray'));
+            if (divId === id){
+                return div;   
+            }
+        }
+    }
+}
+
+function saveToLocalStorage() {
+    localStorage.setItem('todoList',JSON.stringify(todoItems));
+}
+
+function loadFromLocalStorage() {
+    if(localStorage.getItem('todoList') !== null){
+        todoItems = JSON.parse(localStorage.getItem('todoList'));
+        for(var i=0; i<todoItems.length; i++) {
+            addItemUI(todoItems[i]);
+        }
+        
+        let todosList = document.getElementById('todo-list');
+        for (var i=0; i<todoItems.length; i++){
+            if (todoItems[i].isDone){
+                var div = getDivByObjId(todoItems[i].id);
+                moveItem(div, todosList.lastChild);
+            }
+        }
+        
+    }
+    
+    console.log(localStorage.getItem('todoList'));
+}
 
 function pageChange(hashAt) {
     location.hash = hashAt;
@@ -39,8 +91,15 @@ let modifyingItem = null;
 function checkedItem(aCheckbox) {
     aCheckbox.setAttribute('src','assets/img/done-s.png');
     aCheckbox.parentNode.style.background = 'grey';
+    
+    let index = aCheckbox.parentNode.getAttribute('idArray');
+    index = parseInt(index);
+    getItemObj(index).isDone = true;
+    
     let todoList = document.getElementById('todo-list');
     moveItem(aCheckbox.parentNode,todoList.lastChild);
+    
+    saveToLocalStorage();
 }
 
 function moveItem(aItem,lastItem) {
@@ -48,7 +107,15 @@ function moveItem(aItem,lastItem) {
 }
 
 function deleteItem(aItem) {
-    aItem.parentNode.removeChild(aItem);
+    let index = aItem.parentNode.getAttribute('idArray');
+    index = parseInt(index);
+    
+    todoItems.splice(getItemObjArIndex(index),1);
+    
+    let todoList = document.getElementById('todo-list');
+    todoList.removeChild(aItem.parentNode);
+    
+    saveToLocalStorage();
 }
 
 function emptyInput(aInput) {
@@ -70,39 +137,47 @@ function emptyInput(aInput) {
 function addNewtodo() {
     document.getElementById('empty-todo-msg').style.display = 'none';
     
-    let todoItem = document.createElement('div');
-    todoItem.setAttribute('class','todo-item');
-    todoItem.setAttribute('id','todo-item');
-    todoItem.style.display = 'flex';
-    todoItem.style.alignItems = 'center';
+    const itemObj = {
+        isDone: false,
+        id: newObjId,
+        text: document.getElementById('add-todo-input').value
+    };
     
-    let todoItemCheckbox = document.createElement('img');
-    todoItemCheckbox.setAttribute('src','assets/img/todo-s.png');
-    todoItemCheckbox.setAttribute('onClick','checkedItem(this)');
-    todoItem.appendChild(todoItemCheckbox);
-    todoItemCheckbox.style.flex = '5%';
+    newObjId++;
     
-    let todoItemText = document.createElement('p');
-    let inputText = document.getElementById('add-todo-input').value;
-    let itemText = document.createTextNode(inputText);
-    todoItemText.setAttribute('id','itemText');
-    todoItemText.setAttribute('onclick','modifyItem(this)')
-    todoItemText.appendChild(itemText);
-    todoItem.appendChild(todoItemText);
+    addItemUI(itemObj);
+
     document.getElementById('add-todo-input').value = '';
-    todoItemText.style.flex = '90%';
-    todoItemText.style.margin = '0';
+    todoItems.push(itemObj);
+    pageChange('');
     
-    let todoItemDelete = document.createElement('img');
-    todoItemDelete.setAttribute('src','assets/img/remove-s.jpg');
-    todoItemDelete.setAttribute('onClick','deleteItem(parentNode)');
-    todoItem.appendChild(todoItemDelete);
-    todoItemDelete.style.flex = '5%';
+    saveToLocalStorage();
+}
+
+function addItemUI(obj) {
+    let html = '';
+    if (obj.isDone){
+        html = '<img src="assets/img/done-s.png" onClick="checkedItem(this)" />'
+    } else {
+        html = '<img src="assets/img/todo-s.png" onClick="checkedItem(this)" />';
+    }
+    
+    html = html + `
+        <p id="itemText" idArray="${obj.id}" onClick="modifyItem(this)">${obj.text}</p>
+        <img src="assets/img/remove-s.jpg" onClick="deleteItem(this)" />
+    `;
     
     let todosList = document.getElementById('todo-list');
-    todosList.appendChild(todoItem);
+    var addItem = document.createElement('div');
+    addItem.setAttribute('class','todo-item');
+    addItem.setAttribute('id','todo-item');
+    addItem.setAttribute('idArray', obj.id);
+    if (obj.isDone){
+        addItem.style.background = 'gray';
+    }
+    addItem.innerHTML = html;
     
-    pageChange('');
+    todosList.appendChild(addItem);
 }
 
 function modifyItem(aItem) {
@@ -116,8 +191,18 @@ function modifyItemSave() {
     if(modifyingItem !== undefined) {
         let modifyTodoInput = document.getElementById('modify-todo-input');
         modifyingItem.innerText = modifyTodoInput.value;
+        
+        let index = modifyingItem.getAttribute('idArray');
+        index = parseInt(index);
+        
+        getItemObj(index).text = modifyingItem.innerText;
+        
         pageChange('');
+        
+        saveToLocalStorage();
     }
 }
+
+loadFromLocalStorage();
 
 //rootNode.appendChild(/* Append your list item node*/);

@@ -15,3 +15,17 @@ h1, p, .cancel-save-btns {
 .add-item-page, .modify-item {
     display: none;
 }
+
+.todo-item {
+    display: flex;
+    align-items: center;
+}
+
+.todo-item p{
+    flex: 90%;
+    margin: 0;
+}
+
+.todo-item img {
+    flex: 5%;
+}
