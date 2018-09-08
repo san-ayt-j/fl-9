@@ -1,10 +1,10 @@
-const rootNode = document.getElementById('root');
-
 let todoItems = [];
 let newObjId = 0;
 
+let todoList = document.getElementById('todo-list');
+
 function getItemObj(index) {
-    for(var i=0; i<todoItems.length; i++) {
+    for(let i=0; i<todoItems.length; i++) {
         if(todoItems[i].id === index) {
             return todoItems[i];
         }
@@ -12,7 +12,7 @@ function getItemObj(index) {
 }
 
 function getItemObjArIndex(index) {
-    for(var i=0; i<todoItems.length; i++) {
+    for(let i=0; i<todoItems.length; i++) {
         if(todoItems[i].id === index) {
             return i;
         }
@@ -20,11 +20,10 @@ function getItemObjArIndex(index) {
 }
 
 function getDivByObjId(id){
-    let todosList = document.getElementById('todo-list');
-    for (var i=0; i<todosList.childElementCount; i++){
-        var div = todosList.childNodes[i];
+    for (let i=0; i<todoList.childElementCount; i++){
+        let div = todoList.childNodes[i];
         if (div.tagName === 'DIV'){
-            var divId = parseInt(div.getAttribute('idArray'));
+            let divId = parseInt(div.getAttribute('idArray'));
             if (divId === id){
                 return div;   
             }
@@ -39,52 +38,60 @@ function saveToLocalStorage() {
 function loadFromLocalStorage() {
     if(localStorage.getItem('todoList') !== null){
         todoItems = JSON.parse(localStorage.getItem('todoList'));
-        for(var i=0; i<todoItems.length; i++) {
+        for(let i=0; i<todoItems.length; i++) {
             addItemUI(todoItems[i]);
         }
-        
-        let todosList = document.getElementById('todo-list');
-        for (var i=0; i<todoItems.length; i++){
-            if (todoItems[i].isDone){
-                var div = getDivByObjId(todoItems[i].id);
-                moveItem(div, todosList.lastChild);
+        for (let j=0; j<todoItems.length; j++){
+            if (todoItems[j].isDone){
+                let div = getDivByObjId(todoItems[j].id);
+                moveItem(div, todoList.lastChild);
             }
         }
-        
     }
-    
-    console.log(localStorage.getItem('todoList'));
+    const nullLength = 0;
+    if(todoItems === undefined || todoItems.length === nullLength) {
+        document.getElementById('empty-todo-msg').style.display = 'block';
+    } else {
+        document.getElementById('empty-todo-msg').style.display = 'none';
+    }
 }
 
 function pageChange(hashAt) {
     location.hash = hashAt;
 }
 
-document.getElementById('add-item-page').setAttribute('hash','#/add)');
-document.getElementById('modify-item').setAttribute('hash','#/modify');
+const mainPage = document.getElementById('main-page');
+const addItemPage = document.getElementById('add-item-page');
+const modifyItemPage = document.getElementById('modify-item');
+
+addItemPage.setAttribute('hash','#/add)');
+modifyItemPage.setAttribute('hash','#/modify');
 
 window.addEventListener('hashchange',function(e) {
     if(e.newURL.endsWith('#/add')) {
-        document.getElementById('main-page').style.display = 'none';
-        document.getElementById('modify-item').style.display = 'none';
-        document.getElementById('add-item-page').style.display = 'block';
+        mainPage.style.display = 'none';
+        modifyItemPage.style.display = 'none';
+        addItemPage.style.display = 'block';
         return;
     }
      if(e.newURL.endsWith('#/modify')) {
-        document.getElementById('main-page').style.display = 'none';
-        document.getElementById('add-item-page').style.display = 'none';
-        document.getElementById('modify-item').style.display = 'block';
+        mainPage.style.display = 'none';
+        addItemPage.style.display = 'none';
+        modifyItemPage.style.display = 'block';
         return;
     }
-    document.getElementById('main-page').style.display = 'block';
-    document.getElementById('add-item-page').style.display = 'none';
-    document.getElementById('modify-item').style.display = 'none';
+    mainPage.style.display = 'block';
+    addItemPage.style.display = 'none';
+    modifyItemPage.style.display = 'none';
 });
 
-emptyInput(document.getElementById('add-todo-input'));
-document.getElementById('add-todo-input').setAttribute('onkeyup','emptyInput(this)');
-emptyInput(document.getElementById('modify-todo-input'));
-document.getElementById('modify-todo-input').setAttribute('onkeyup','emptyInput(this)');
+let addTodoInput = document.getElementById('add-todo-input');
+let modifyTodoInput = document.getElementById('modify-todo-input');
+
+emptyInput(addTodoInput);
+addTodoInput.setAttribute('onkeyup','emptyInput(this)');
+emptyInput(modifyTodoInput);
+modifyTodoInput.setAttribute('onkeyup','emptyInput(this)');
 
 let modifyingItem = null;
 
@@ -96,7 +103,6 @@ function checkedItem(aCheckbox) {
     index = parseInt(index);
     getItemObj(index).isDone = true;
     
-    let todoList = document.getElementById('todo-list');
     moveItem(aCheckbox.parentNode,todoList.lastChild);
     
     saveToLocalStorage();
@@ -112,7 +118,6 @@ function deleteItem(aItem) {
     
     todoItems.splice(getItemObjArIndex(index),1);
     
-    let todoList = document.getElementById('todo-list');
     todoList.removeChild(aItem.parentNode);
     
     saveToLocalStorage();
@@ -140,14 +145,14 @@ function addNewtodo() {
     const itemObj = {
         isDone: false,
         id: newObjId,
-        text: document.getElementById('add-todo-input').value
+        text: addTodoInput.value
     };
     
     newObjId++;
     
     addItemUI(itemObj);
 
-    document.getElementById('add-todo-input').value = '';
+    addTodoInput.value = '';
     todoItems.push(itemObj);
     pageChange('');
     
@@ -167,8 +172,7 @@ function addItemUI(obj) {
         <img src="assets/img/remove-s.jpg" onClick="deleteItem(this)" />
     `;
     
-    let todosList = document.getElementById('todo-list');
-    var addItem = document.createElement('div');
+    let addItem = document.createElement('div');
     addItem.setAttribute('class','todo-item');
     addItem.setAttribute('id','todo-item');
     addItem.setAttribute('idArray', obj.id);
@@ -177,19 +181,17 @@ function addItemUI(obj) {
     }
     addItem.innerHTML = html;
     
-    todosList.appendChild(addItem);
+    todoList.appendChild(addItem);
 }
 
 function modifyItem(aItem) {
     modifyingItem = aItem;
-    let modifyTodoInput = document.getElementById('modify-todo-input');
     modifyTodoInput.value = modifyingItem.innerText;
     pageChange('#/modify');
 }
 
 function modifyItemSave() {
     if(modifyingItem !== undefined) {
-        let modifyTodoInput = document.getElementById('modify-todo-input');
         modifyingItem.innerText = modifyTodoInput.value;
         
         let index = modifyingItem.getAttribute('idArray');
@@ -204,5 +206,3 @@ function modifyItemSave() {
 }
 
 loadFromLocalStorage();
-
-//rootNode.appendChild(/* Append your list item node*/);
